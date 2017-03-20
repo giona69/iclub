@@ -1,0 +1,469 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/1Syto8FhRZ20o40fyML670dqd8A\"",
+ "discoveryVersion": "v1",
+ "id": "utenteApi:v1",
+ "name": "utenteApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "iclub.hearst.it",
+ "ownerName": "iclub.hearst.it",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "rpcUrl": "https://myApplicationId.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "CollectionResponse_Utente": {
+   "id": "CollectionResponse_Utente",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Utente"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Entity": {
+   "id": "Entity",
+   "type": "object",
+   "properties": {
+    "appId": {
+     "type": "string"
+    },
+    "key": {
+     "$ref": "Key"
+    },
+    "kind": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "parent": {
+     "$ref": "Key"
+    },
+    "properties": {
+     "$ref": "JsonMap"
+    },
+    "propertiesFrom": {
+     "$ref": "Entity"
+    }
+   }
+  },
+  "JsonMap": {
+   "id": "JsonMap",
+   "type": "object"
+  },
+  "Key": {
+   "id": "Key",
+   "type": "object",
+   "properties": {
+    "appId": {
+     "type": "string"
+    },
+    "complete": {
+     "type": "boolean"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "kind": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "namespace": {
+     "type": "string"
+    },
+    "parent": {
+     "$ref": "Key"
+    }
+   }
+  },
+  "ListUtenti": {
+   "id": "ListUtenti",
+   "type": "object",
+   "properties": {
+    "listUtente": {
+     "type": "array",
+     "items": {
+      "$ref": "Utente"
+     }
+    }
+   }
+  },
+  "Utente": {
+   "id": "Utente",
+   "type": "object",
+   "properties": {
+    "abbonamento_form": {
+     "type": "string"
+    },
+    "abbonamento_form_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "abbonamento_marketing": {
+     "type": "string"
+    },
+    "abbonamento_privacy": {
+     "type": "string"
+    },
+    "abbonamento_sito": {
+     "type": "string"
+    },
+    "abbonamento_source": {
+     "type": "string"
+    },
+    "abbonamento_url": {
+     "type": "string"
+    },
+    "cap": {
+     "type": "string"
+    },
+    "citta": {
+     "type": "string"
+    },
+    "civico": {
+     "type": "string"
+    },
+    "codice_coupon": {
+     "type": "string"
+    },
+    "data_nascita": {
+     "type": "string"
+    },
+    "deleted": {
+     "type": "boolean"
+    },
+    "first_name": {
+     "type": "string"
+    },
+    "genre": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "import_date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "import_id": {
+     "type": "string"
+    },
+    "import_source": {
+     "type": "string"
+    },
+    "indirizzo": {
+     "type": "string"
+    },
+    "lang": {
+     "type": "string"
+    },
+    "last_name": {
+     "type": "string"
+    },
+    "marketing": {
+     "type": "string"
+    },
+    "nazione": {
+     "type": "string"
+    },
+    "newsletter": {
+     "type": "string"
+    },
+    "newsletter_elleactive": {
+     "type": "string"
+    },
+    "password": {
+     "type": "string"
+    },
+    "prefisso": {
+     "type": "string"
+    },
+    "privacy": {
+     "type": "string"
+    },
+    "professione": {
+     "type": "string"
+    },
+    "provincia": {
+     "type": "string"
+    },
+    "source_registrazione": {
+     "type": "string"
+    },
+    "stato_coupon": {
+     "type": "string"
+    },
+    "telefono": {
+     "type": "string"
+    },
+    "terms": {
+     "type": "string"
+    },
+    "token": {
+     "type": "string"
+    },
+    "urlPhoto": {
+     "type": "string"
+    },
+    "user_email": {
+     "type": "string"
+    },
+    "user_login": {
+     "type": "string"
+    },
+    "user_registered": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "user_status": {
+     "type": "string"
+    },
+    "year_birth": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "utenteApi.deleteUtente": {
+   "id": "utenteApi.deleteUtente",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "ns": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "Utente"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "id",
+    "ns"
+   ],
+   "returns": {
+    "$ref": "Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.getUtente": {
+   "id": "utenteApi.getUtente",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "ns": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "id",
+    "ns"
+   ],
+   "returns": {
+    "$ref": "Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.importUtente": {
+   "id": "utenteApi.importUtente",
+   "parameters": {
+    "ns": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "ListUtenti"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "ns"
+   ],
+   "returns": {
+    "$ref": "Entity"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.insertUtente": {
+   "id": "utenteApi.insertUtente",
+   "parameters": {
+    "ns": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "Utente"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "ns"
+   ],
+   "returns": {
+    "$ref": "Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.listUtente": {
+   "id": "utenteApi.listUtente",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "ns": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "ns"
+   ],
+   "returns": {
+    "$ref": "CollectionResponse_Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.searchUtente": {
+   "id": "utenteApi.searchUtente",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "ns": {
+     "type": "string",
+     "required": true
+    },
+    "search": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "ns",
+    "search"
+   ],
+   "returns": {
+    "$ref": "CollectionResponse_Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "utenteApi.updateUtente": {
+   "id": "utenteApi.updateUtente",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true
+    },
+    "ns": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "Utente"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "id",
+    "ns"
+   ],
+   "returns": {
+    "$ref": "Utente"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}
