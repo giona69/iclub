@@ -109,7 +109,7 @@ public class PianificazioneEndpoint {
             NamespaceManager.set("iclub");
             DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-            Query q = new Query("Pianificazione").addSort("user_registered", Query.SortDirection.DESCENDING);
+            Query q = new Query("Pianificazione").addSort("data", Query.SortDirection.DESCENDING);
 
             Cursor cursor = null;
             QueryResultList<Entity> lista = null;
@@ -164,8 +164,8 @@ public class PianificazioneEndpoint {
             DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
             Query q = new Query("Pianificazione")
-                    .setFilter(new Query.FilterPredicate("user_email", Query.FilterOperator.GREATER_THAN_OR_EQUAL, search))
-                    .addSort("user_email", Query.SortDirection.ASCENDING);
+                    .setFilter(new Query.FilterPredicate("titolo", Query.FilterOperator.GREATER_THAN_OR_EQUAL, search))
+                    .addSort("titolo", Query.SortDirection.ASCENDING);
 
             Cursor cursor = null;
             QueryResultList<Entity> lista = null;
@@ -180,8 +180,8 @@ public class PianificazioneEndpoint {
             }
 
             for (Entity myEntity: lista) {
-                String emailcheck = (String) myEntity.getProperty("user_email");
-                if (emailcheck.contains(search)) {
+                String titolocheck = (String) myEntity.getProperty("titolo");
+                if (titolocheck.contains(search)) {
                     Pianificazione thisU = new Pianificazione();
                     thisU.setId(KeyFactory.keyToString(myEntity.getKey()));
                     thisU.setTitolo((String) myEntity.getProperty("titolo"));
